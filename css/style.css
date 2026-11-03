@@ -1,0 +1,560 @@
+/* =========================================================
+   Pousada dos Lagos — layout no modelo do site da Windjeri
+   Fontes: GFS Neohellenic (títulos), Fahkwang (sobretítulos),
+   Montserrat (rótulos), Rubik (rodapé), Helvetica/Arial (texto)
+   ========================================================= */
+:root {
+  --azul: #0077ae;
+  --azul-escuro: #004d84;
+  --azul-claro: #deebf5;
+  --amarelo: #fac23a;
+  --laranja: #f26b1d;          /* sol da logo: no lugar do verde do modelo */
+  --laranja-escuro: #d9560c;
+  --cinza-titulo: #3d3d3d;
+  --cinza-texto: #54595f;
+  --cinza-escuro: #4a4a4a;
+  --whats: #0d9f58;
+  --branco: #fff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 20px; }
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: var(--cinza-texto);
+  background: var(--branco);
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+
+.container { width: min(1140px, 100% - 32px); margin-inline: auto; }
+.estreito { width: min(684px, 100% - 32px); margin-inline: auto; }
+.destaque { color: var(--laranja); }
+.amarelo { color: var(--amarelo); }
+
+/* Títulos de seção no estilo do modelo */
+.titulo-linha, .titulo-simples { text-align: center; }
+.titulo-linha { padding: 70px 16px 50px; position: relative; }
+.titulo-linha::before {
+  content: ''; display: block;
+  width: min(612px, 80%); height: 1px;
+  background: var(--azul); margin: 0 auto 26px;
+}
+.titulo-linha h2, .titulo-simples h2, .titulo-lateral h2 {
+  font-family: 'GFS Neohellenic', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+  color: var(--cinza-titulo);
+  letter-spacing: .5px;
+}
+.titulo-simples { padding: 70px 0 50px; }
+.titulo-misto {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  color: var(--cinza-titulo);
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+/* Botão com degradê (igual ao "Faça uma reserva" do modelo) */
+.btn-gradiente {
+  display: inline-block;
+  padding: 20px 35px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, var(--laranja) 0%, var(--azul-escuro) 100%);
+  color: var(--branco);
+  font-size: .9rem; font-weight: 700;
+  text-transform: uppercase;
+  transition: filter .25s, transform .25s;
+}
+.btn-gradiente:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
+/* Botão do Booking (contorno azul, ao lado do botão principal) */
+.btn-booking {
+  display: inline-block;
+  padding: 18px 30px;
+  border: 2px solid #003580; border-radius: 14px;
+  color: #003580; background: var(--branco);
+  font-size: .9rem; font-weight: 700; text-transform: uppercase;
+  transition: background .25s, color .25s, transform .25s;
+}
+.btn-booking:hover { background: #003580; color: var(--branco); transform: translateY(-2px); }
+.botoes-reserva { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.botoes-reserva--centro { justify-content: center; }
+
+/* Fundo claro com folhas desenhadas (substitui a aquarela do modelo) */
+.folhas-fundo {
+  position: relative;
+  background-color: #f6f8f4;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cg fill='%2389b38a' opacity='.13'%3E%3Cpath d='M40 360 C 60 250, 140 180, 230 160 C 200 250, 130 330, 40 360Z'/%3E%3Cpath d='M300 60 C 360 90, 380 170, 360 240 C 310 200, 290 130, 300 60Z'/%3E%3Cpath d='M120 40 C 170 50, 200 100, 190 150 C 150 130, 120 90, 120 40Z'/%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(180deg, #e4eef3 0%, #f8f9f6 60%);
+  background-size: 520px 520px, cover;
+}
+
+/* ===== CABEÇALHO ===== */
+.topo { position: absolute; inset: 0 0 auto 0; z-index: 50; }
+.topo__linha {
+  width: min(1140px, 100% - 32px); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 0;
+}
+.topo__logo img { height: 74px; width: auto; }
+.menu { display: flex; align-items: center; gap: 20px; }
+.menu a {
+  color: var(--branco);
+  text-transform: uppercase;
+  font-size: .9rem;
+  transition: color .2s;
+}
+.menu a:hover, .menu a.ativo { color: var(--amarelo); }
+.menu__contorno {
+  border: 1px solid var(--branco);
+  padding: 11px 24px;
+  font-size: .72rem !important; font-weight: 700; letter-spacing: 1px;
+}
+.menu__reservar {
+  background: var(--azul);
+  padding: 11px 24px;
+  font-size: .72rem !important; font-weight: 700; letter-spacing: 1px;
+}
+.menu__reservar:hover { background: var(--azul-escuro); color: var(--branco) !important; }
+.menu-botao { display: none; background: none; border: 0; cursor: pointer; padding: 6px; }
+.menu-botao span { display: block; width: 26px; height: 3px; background: var(--branco); margin: 5px 0; border-radius: 3px; transition: .3s; }
+
+/* ===== CAPA COM A FOTO DA FACHADA ===== */
+.capa { position: relative; height: 100vh; min-height: 560px; max-height: 900px; overflow: hidden; background: #0b2a3f; }
+.capa__foto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 100%; }
+@media (orientation: portrait) {
+  .capa__foto { object-position: 80% center; }
+}
+.capa__escuro { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,0) 30%); }
+.capa__nota {
+  position: absolute; right: max(16px, calc((100% - 1140px) / 2)); bottom: 40px;
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(255, 255, 255, .92); color: #333;
+  padding: 10px 18px 10px 10px; border-radius: 12px;
+  font-size: .85rem; line-height: 1.35;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .2);
+  transition: transform .2s;
+}
+.capa__nota:hover { transform: translateY(-3px); }
+.capa__nota-g { width: 38px; height: 38px; flex-shrink: 0; }
+.capa__nota b { color: #222; }
+.capa__nota span { color: #555; }
+
+/* ===== APRESENTAÇÃO ===== */
+.intro { padding-top: 90px; }
+.intro__grade { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.sobretitulo {
+  font-family: 'Fahkwang', serif; font-weight: 600;
+  text-transform: uppercase; font-size: .95rem;
+  color: var(--cinza-titulo); margin-bottom: 4px;
+}
+.intro h1 {
+  font-family: Helvetica, Arial, sans-serif; font-weight: 400;
+  font-size: clamp(2.4rem, 5vw, 3.1rem);
+  color: var(--cinza-titulo); margin-bottom: 18px; line-height: 1.2;
+}
+.h1-local {
+  display: block; margin-top: 6px;
+  font-family: 'Montserrat', sans-serif; font-weight: 400;
+  font-size: clamp(.95rem, 1.6vw, 1.1rem); letter-spacing: .5px; color: var(--azul-escuro);
+}
+.intro__texto > p:not(.sobretitulo):not(.garantia) { font-size: 1rem; margin-bottom: 14px; }
+.intro__texto .botoes-reserva { margin-top: 22px; }
+.garantia {
+  font-family: 'Montserrat', sans-serif; font-weight: 300;
+  text-transform: uppercase; font-size: 1rem; margin-top: 30px;
+}
+.intro__video { display: flex; justify-content: center; }
+.intro__video video {
+  width: min(340px, 100%); aspect-ratio: 9 / 16;
+  object-fit: cover; border-radius: 16px; background: #000;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .18);
+}
+
+/* ===== 4 FOTOS COM TÍTULO ===== */
+.destaques { display: grid; grid-template-columns: repeat(4, 1fr); }
+.destaque-foto--cafe { background-image: url('../img/p/cafe-da-manha.jpg'); }
+.destaque-foto--quarto { background-image: url('../img/p/quarto-triplo.jpg'); }
+.destaque-foto--lazer { background-image: url('../img/p/quiosque.jpg'); }
+.destaque-foto--redes { background-image: url('../img/p/varanda-redes.jpg'); }
+.destaque-foto {
+  position: relative; height: 340px;
+  background-size: cover; background-position: center;
+  display: flex; justify-content: center;
+}
+.destaque-foto::before { content: ''; position: absolute; inset: 0; background: rgba(0, 0, 0, .38); transition: background .3s; }
+.destaque-foto:hover::before { background: rgba(0, 0, 0, .2); }
+.destaque-foto span {
+  position: relative; color: var(--branco);
+  font-size: 1.3rem; margin-top: 80px; text-align: center; padding: 0 12px;
+}
+
+/* ===== FAIXA AZUL CLARA ===== */
+.azul-claro { background: var(--azul-claro); padding-bottom: 70px; }
+
+/* Comodidades */
+.comodidades {
+  position: relative;
+  width: min(1200px, 100%); margin: 0 auto;
+  display: grid; grid-template-columns: 230px 1fr; align-items: center;
+  padding: 80px 16px 0;
+}
+.folha-canto { position: absolute; left: 0; top: 0; width: 300px; pointer-events: none; }
+.comodidades__titulo {
+  position: relative;
+  font-family: 'Montserrat', sans-serif; font-weight: 300;
+  font-size: 1.5rem; color: var(--cinza-texto); line-height: 1.35;
+  padding-left: 70px;
+}
+.comodidades__lista { list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); }
+.comodidades__lista li {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  min-height: 125px; padding: 0 10px;
+  border-left: 1px solid #c7d3dd;
+  font-family: 'Montserrat', sans-serif; font-size: .82rem;
+  text-transform: uppercase; text-align: center; color: var(--cinza-texto);
+}
+.comodidades__lista li:last-child { border-right: 1px solid #c7d3dd; }
+.comodidades__lista svg { width: 44px; height: 44px; color: #222; }
+
+/* Quartos */
+.quartos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.quarto {
+  background: var(--branco); border-radius: 12px; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.quarto img { width: 100%; height: 300px; object-fit: cover; object-position: center 55%; }
+.quarto__info { padding: 22px 0 10px 10px; display: flex; flex-direction: column; flex: 1; }
+.quarto__info h3 { font-family: Helvetica, Arial, sans-serif; font-weight: 400; font-size: 1.4rem; color: var(--cinza-titulo); padding-left: 0; margin-bottom: 18px; }
+.quarto__pessoas { display: flex; align-items: center; gap: 6px; font-size: .9rem; margin-bottom: 16px; color: #444; }
+.quarto__pessoas svg { width: 18px; height: 18px; fill: var(--amarelo); }
+.quarto__itens { list-style: none; margin-bottom: 14px; }
+.quarto__itens li { font-size: .9rem; color: #444; padding-left: 22px; position: relative; margin-bottom: 4px; }
+.quarto__itens li::before {
+  content: ''; position: absolute; left: 2px; top: 4px;
+  width: 9px; height: 5px;
+  border-left: 3px solid var(--amarelo); border-bottom: 3px solid var(--amarelo);
+  transform: rotate(-45deg);
+}
+.quarto__preco { font-size: .85rem; margin-bottom: 16px; color: #555; }
+.quarto__preco strong { font-size: 1.3rem; color: var(--azul-escuro); }
+.quarto__preco small { display: block; font-size: .75rem; color: #888; }
+.quarto__botao {
+  margin-top: auto; margin-left: 32px;
+  display: block; text-align: center;
+  background: var(--laranja); color: var(--branco);
+  font-size: 1.1rem; font-weight: 700;
+  padding: 13px; border-radius: 12px;
+  transition: background .2s;
+}
+.quarto__botao:hover { background: var(--laranja-escuro); }
+.quarto__booking {
+  margin: 10px 0 4px 32px; text-align: center;
+  font-size: .85rem; color: #003580; text-decoration: underline;
+}
+.quarto__booking:hover { color: var(--laranja); }
+
+/* ===== ONDE ESTAMOS ===== */
+.onde {
+  background: url('../img/quiosque.jpg') center / cover;
+  padding: 45px 16px;
+  display: flex; justify-content: center;
+}
+.onde__caixa {
+  background: var(--branco);
+  width: min(582px, 100%);
+  padding: 40px 34px 45px;
+  text-align: center;
+}
+.onde__sobretitulo {
+  font-family: 'Fahkwang', serif; font-weight: 600;
+  text-transform: uppercase; color: var(--laranja); font-size: 1.1rem; margin-bottom: 18px;
+}
+.onde h2 { font-family: Helvetica, Arial, sans-serif; font-weight: 400; font-size: 1.9rem; color: var(--cinza-titulo); margin-bottom: 26px; }
+.onde__caixa > p:not(.onde__sobretitulo) { font-size: 1rem; margin-bottom: 30px; }
+.avaliacoes__fontes { margin: -16px 0 40px; }
+.avaliacoes__fontes .btn-booking { padding: 12px 22px; font-size: .8rem; }
+
+/* ===== INSTAGRAM ===== */
+.instagram { padding-top: 110px; }
+.titulo-lateral { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 100px; padding-right: 160px; margin-bottom: 70px; }
+.titulo-lateral__linha { height: 1px; background: var(--azul); }
+
+.carrossel { position: relative; }
+.carrossel__trilho {
+  display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 45px) / 4);
+  gap: 15px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.carrossel__trilho::-webkit-scrollbar { display: none; }
+.carrossel__item { border: 0; padding: 0; cursor: zoom-in; scroll-snap-align: start; aspect-ratio: 5 / 6; overflow: hidden; background: #ccc; }
+.carrossel__item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.carrossel__item:hover img { transform: scale(1.05); }
+
+.seta {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+  background: none; border: 0; cursor: pointer;
+  color: var(--amarelo); font-size: 3.2rem; line-height: 1; padding: 0 14px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, .35);
+}
+.seta--esq { left: 0; }
+.seta--dir { right: 0; }
+
+.instagram__arroba {
+  display: flex; justify-content: center; align-items: center; gap: 14px;
+  margin: 26px 0 30px;
+  font-family: 'Montserrat', sans-serif; letter-spacing: 4px; text-transform: uppercase;
+  color: #555; font-size: .95rem;
+}
+.instagram__arroba svg { width: 28px; height: 28px; color: #333; }
+
+.slide-grande { position: relative; aspect-ratio: 1180 / 650; overflow: hidden; background: #ccc; }
+.slide-grande img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .8s; }
+.slide-grande img.ativo { opacity: 1; }
+.slide-grande img.foco-baixo { object-position: center 85%; }
+
+/* ===== PROMOÇÕES ===== */
+/* Celular: a foto em pé fica de fundo (cabe bem em tela em pé) */
+.promo {
+  position: relative; overflow: hidden; background: #24190f;
+  padding: 80px 16px; text-align: center; color: var(--branco);
+}
+.promo__foto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+.promo::before { content: ''; position: absolute; inset: 0; z-index: 1; background: rgba(0, 0, 0, .55); }
+.promo__conteudo { position: relative; z-index: 2; }
+/* Notebook e computador: texto de um lado e a foto inteira do outro, sem esticar */
+@media (min-width: 900px) {
+  .promo {
+    display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+    padding: 0; background: linear-gradient(90deg, #1c140d 0%, #2e2013 100%);
+  }
+  .promo::before { display: none; }
+  .promo__foto { position: relative; inset: auto; order: 2; height: 460px; object-position: center 40%; }
+  .promo__conteudo { padding: 60px 40px; }
+}
+.promo h2 { font-family: Helvetica, Arial, sans-serif; font-weight: 400; font-size: clamp(1.6rem, 3vw, 2rem); text-transform: uppercase; margin-bottom: 8px; }
+.promo p { margin-bottom: 22px; font-size: 1.05rem; }
+
+/* ===== DÚVIDAS ===== */
+.duvidas { padding: 90px 0 90px; }
+.faq details { margin-bottom: 16px; }
+.faq summary {
+  cursor: pointer; list-style: none;
+  border: 1px solid var(--amarelo); border-radius: 15px;
+  padding: 11px 16px 11px 34px; position: relative;
+  color: #222; font-size: 1rem;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::before {
+  content: '+'; position: absolute; left: 10px; top: 50%; transform: translateY(-52%);
+  color: var(--amarelo); font-size: 1.6rem; font-weight: 700;
+}
+.faq details[open] summary::before { content: '–'; color: #222; }
+.faq details p { padding: 14px 16px 22px 10px; color: var(--cinza-texto); border-top: 0; }
+
+/* ===== AVALIAÇÕES ===== */
+.avaliacoes { padding-top: 80px; }
+.avaliacoes .titulo-misto { margin-bottom: 10px; }
+.avaliacoes__nota { text-align: center; margin-bottom: 40px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-size: .85rem; letter-spacing: 1px; }
+.avaliacoes__nota strong { background: var(--azul-escuro); color: var(--branco); padding: 6px 10px; border-radius: 8px 8px 8px 0; margin-right: 6px; font-size: 1rem; }
+.depoimentos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.depoimentos blockquote { background: var(--branco); border-radius: 12px; padding: 28px; }
+.depoimentos blockquote::before { content: '★★★★★'; display: block; color: var(--amarelo); letter-spacing: 3px; margin-bottom: 10px; }
+.depoimentos p { font-size: .95rem; color: #444; }
+.depoimentos cite { display: block; margin-top: 14px; font-style: normal; font-weight: 700; color: var(--cinza-titulo); }
+
+/* ===== RECEBA OFERTAS ===== */
+.ofertas { background: var(--cinza-escuro); padding: 90px 0 100px; text-align: center; }
+.ofertas h2 { color: var(--branco); font-weight: 400; font-size: clamp(1.6rem, 3vw, 2rem); text-transform: uppercase; line-height: 1.2; margin-bottom: 56px; }
+#formOfertas { display: flex; flex-direction: column; gap: 18px; }
+#formOfertas input[type="text"] {
+  height: 40px; padding: 0 20px;
+  border: 1px solid var(--azul); border-radius: 3px;
+  font-family: 'Montserrat', sans-serif; font-size: .9rem;
+}
+.ofertas__aceite { display: flex; align-items: center; gap: 18px; color: var(--branco); font-weight: 700; font-size: .9rem; text-align: left; margin: 14px 0 6px; }
+.ofertas__aceite input { width: 15px; height: 15px; flex-shrink: 0; }
+#formOfertas button {
+  height: 45px; border: 0; border-radius: 3px;
+  background: var(--azul); color: var(--branco);
+  font-weight: 700; text-transform: uppercase; cursor: pointer;
+}
+#formOfertas button:hover { background: var(--azul-escuro); }
+
+/* ===== MAPA ===== */
+.mapa iframe { display: block; width: 100%; height: 340px; border: 0; }
+
+/* ===== RODAPÉ ===== */
+.rodape {
+  background: linear-gradient(135deg, var(--azul) 0%, var(--azul-escuro) 100%);
+  color: var(--branco); padding: 85px 0 22px;
+  font-family: 'GFS Neohellenic', serif; font-size: 1.05rem;
+}
+.rodape__caixa { width: min(1120px, 100% - 32px); margin: 0 auto; }
+.rodape__topo {
+  display: grid; grid-template-columns: 1fr 1fr;
+  border-top: 1px solid rgba(255, 255, 255, .8); border-bottom: 1px solid rgba(255, 255, 255, .8);
+  padding: 42px 0;
+}
+.rodape__logo { display: flex; justify-content: center; align-items: center; border-right: 1px solid rgba(255, 255, 255, .8); }
+.rodape__logo img { width: 180px; }
+.rodape h4 { font-family: 'Rubik', sans-serif; font-weight: 500; text-transform: uppercase; font-size: 1.05rem; margin-bottom: 26px; }
+.rodape__contato { padding-left: 52px; }
+.rodape__contato p { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 12px; }
+.rodape__contato svg { width: 17px; height: 17px; fill: var(--amarelo); flex-shrink: 0; margin-top: 2px; }
+.rodape__insta { display: inline-block; margin-top: 22px; color: var(--amarelo); }
+.rodape__insta svg { width: 20px; height: 20px; }
+.rodape__links { display: grid; grid-template-columns: repeat(3, 1fr); padding: 60px 25px 30px; }
+.rodape__links a { display: block; margin-bottom: 12px; }
+.rodape__links a:hover { color: var(--amarelo); }
+.rodape__copy { text-align: center; font-family: 'Montserrat', sans-serif; font-size: .95rem; }
+
+/* ===== WHATSAPP FLUTUANTE ===== */
+.whats-flutuante {
+  position: fixed; left: 20px; bottom: 20px; z-index: 60;
+  width: 58px; height: 58px; border-radius: 50%;
+  background: var(--whats); display: grid; place-items: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+}
+.whats-flutuante svg { width: 30px; height: 30px; }
+
+/* ===== FOTO AMPLIADA ===== */
+.lightbox { position: fixed; inset: 0; z-index: 200; background: rgba(0, 0, 0, .9); display: grid; place-items: center; padding: 20px; }
+.lightbox[hidden] { display: none; }
+.lightbox img { max-height: 90vh; max-width: 100%; }
+.lightbox__fechar { position: absolute; top: 14px; right: 22px; background: none; border: 0; color: #fff; font-size: 2.6rem; cursor: pointer; }
+
+/* ===== TABLET ===== */
+@media (max-width: 1024px) {
+  .topo { position: fixed; background: rgba(0, 0, 0, .25); transition: background .3s; }
+  .topo.solido { background: var(--azul-escuro); }
+  .topo__logo img { height: 56px; }
+  .topo__linha { padding: 10px 0; }
+  .menu {
+    position: fixed; top: 76px; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--azul-escuro);
+    max-height: 0; overflow: hidden; transition: max-height .35s;
+  }
+  .menu.aberto { max-height: 520px; }
+  .menu a { padding: 15px 24px; border-bottom: 1px solid rgba(255, 255, 255, .12); }
+  .menu__contorno, .menu__reservar { border: 0 !important; background: none; font-size: .9rem !important; }
+  .menu-botao { display: block; }
+  .menu-botao.aberto span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .menu-botao.aberto span:nth-child(2) { opacity: 0; }
+  .menu-botao.aberto span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  html { scroll-padding-top: 80px; }
+  .capa { height: 88vh; height: 88svh; max-height: none; }
+  .capa__nota { bottom: 24px; }
+  .intro { padding-top: 70px; }
+  .intro__grade { grid-template-columns: 1fr; }
+  .destaques { grid-template-columns: 1fr 1fr; }
+  .destaque-foto { height: 260px; }
+  .comodidades { grid-template-columns: 1fr; padding-top: 110px; }
+  .comodidades__titulo { padding: 0 0 30px; text-align: center; }
+  .comodidades__titulo br { display: none; }
+  .folha-canto { width: 200px; }
+  .quartos { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .titulo-lateral { gap: 30px; padding-right: 16px; }
+  .carrossel__trilho { grid-auto-columns: calc((100% - 15px) / 2); }
+  .depoimentos { grid-template-columns: 1fr; }
+}
+
+/* ===== CELULAR ===== */
+@media (max-width: 640px) {
+  .destaques { grid-template-columns: 1fr; }
+  .destaque-foto { height: 220px; }
+  .destaque-foto span { margin-top: 0; align-self: center; }
+  .comodidades__lista { grid-template-columns: 1fr 1fr; row-gap: 16px; }
+  .comodidades__lista li, .comodidades__lista li:last-child { border: 0; min-height: 100px; }
+  .quartos { grid-template-columns: 1fr; }
+  .quarto__info { padding: 22px 16px 16px; }
+  .quarto__botao, .quarto__booking { margin-left: 0; }
+  .botoes-reserva a { width: 100%; text-align: center; }
+  .titulo-lateral { grid-template-columns: 40px 1fr; gap: 14px; }
+  .titulo-lateral h2 { font-size: 1.25rem; }
+  .carrossel__trilho { grid-auto-columns: 78%; }
+  .instagram__arroba { letter-spacing: 2px; font-size: .8rem; }
+  .slide-grande { aspect-ratio: 4 / 3; }
+  .btn-gradiente { padding: 17px 28px; }
+  .rodape__topo { grid-template-columns: 1fr; }
+  .rodape__logo { border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, .5); padding-bottom: 30px; margin-bottom: 30px; }
+  .rodape__contato { padding-left: 0; }
+  .rodape__links { grid-template-columns: 1fr 1fr; padding: 40px 0 20px; }
+  .mapa iframe { height: 280px; }
+}
+
+/* ===== CELULAR DEITADO (tela baixa) ===== */
+@media (max-height: 500px) and (orientation: landscape) {
+  .capa { height: 100vh; height: 100svh; min-height: 300px; }
+  .capa__nota { bottom: 14px; padding: 6px 12px 6px 8px; }
+  .menu.aberto { max-height: calc(100vh - 76px); overflow-y: auto; }
+}
+
+/* Botão do WhatsApp menor no celular e espaço no fim para não cobrir o rodapé */
+@media (max-width: 640px) {
+  .whats-flutuante { width: 50px; height: 50px; left: 14px; bottom: 14px; }
+  .whats-flutuante svg { width: 26px; height: 26px; }
+  .rodape { padding-bottom: 80px; }
+}
+
+/* =========================================================
+   ANIMAÇÕES (as mesmas do modelo Windjeri / Elementor)
+   surgir = fadeIn · esquerda = fadeInLeft · direita = fadeInRight
+   Só escondem quando o JavaScript está ativo (classe .js no <html>).
+   ========================================================= */
+html, body { overflow-x: clip; }
+
+@keyframes surgir { from { opacity: 0; } to { opacity: 1; } }
+@keyframes entrarEsquerda { from { opacity: 0; transform: translate3d(-100%, 0, 0); } to { opacity: 1; transform: none; } }
+@keyframes entrarDireita { from { opacity: 0; transform: translate3d(100%, 0, 0); } to { opacity: 1; transform: none; } }
+
+.js [data-anim] { opacity: 0; }
+.js [data-anim].animado { opacity: 1; animation-duration: 1.25s; animation-fill-mode: both; animation-timing-function: ease; }
+.js [data-anim="surgir"].animado { animation-name: surgir; }
+.js [data-anim="esquerda"].animado { animation-name: entrarEsquerda; }
+.js [data-anim="direita"].animado { animation-name: entrarDireita; }
+.js [data-atraso="1"].animado { animation-delay: .1s; }
+.js [data-atraso="2"].animado { animation-delay: .25s; }
+.js [data-atraso="3"].animado { animation-delay: .4s; }
+.js [data-atraso="4"].animado { animation-delay: .55s; }
+.js [data-atraso="5"].animado { animation-delay: .7s; }
+
+/* Fotos de destaque: ao passar o mouse a foto clareia e aproxima de leve (hover "fade-in" do modelo) */
+.destaque-foto { overflow: hidden; }
+.destaque-foto::after {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background: inherit; background-size: cover; background-position: center;
+  transform: scale(1); transition: transform .8s ease;
+}
+.destaque-foto::before { z-index: 1; }
+.destaque-foto span { z-index: 2; transition: transform .4s ease; }
+.destaque-foto:hover::after { transform: scale(1.08); }
+.destaque-foto:hover span { transform: translateY(-6px); }
+
+/* Celular: o topo some ao descer e volta ao subir (efeito do modelo no celular) */
+@media (max-width: 1024px) {
+  .topo { transition: background .3s, transform .35s ease; }
+  .topo.escondido { transform: translateY(-100%); }
+}
+
+/* Quem pediu "reduzir movimento" no aparelho não vê animação */
+@media (prefers-reduced-motion: reduce) {
+  .js [data-anim], .js [data-anim].animado { opacity: 1; animation: none; }
+  .destaque-foto::after, .destaque-foto span, .topo { transition: none; }
+  .destaque-foto:hover::after { transform: none; }
+}
+
+/* Capa com a foto: no PC o selo do Google vai para a esquerda para não cobrir a placa da pousada */
+@media (min-width: 1025px) {
+  .capa__nota { right: auto; left: max(100px, calc((100% - 1140px) / 2)); }
+}

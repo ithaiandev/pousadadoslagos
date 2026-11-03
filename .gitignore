@@ -1,0 +1,10 @@
+# Originais (fotos e vídeos brutos). O site usa as versões otimizadas de img/ e videos/apresentacao.mp4
+imagens/
+videos/videodeaberturasite.mp4
+videos/videodeapresentação.mp4
+
+# Arquivos do sistema e do editor
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/

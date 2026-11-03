@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Segurança: só carrega scripts, estilos, fontes, imagens e vídeos do próprio site,
+       do Google Fonts e do mapa do Google. Bloqueia scripts injetados e plugins. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; frame-src https://www.google.com https://maps.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Pousada em Paulino Neves - MA | Pousada dos Lagos · Lençóis Maranhenses</title>
+  <meta name="description" content="Pousada dos Lagos: hospedagem em Paulino Neves (MA), porta de entrada dos Pequenos Lençóis Maranhenses. Café da manhã regional incluso, aceita pets, estacionamento grátis. Diárias a partir de R$ 190.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-video-preview:-1">
+  <meta name="theme-color" content="#004d84">
+  <meta name="geo.region" content="BR-MA">
+  <meta name="geo.placename" content="Paulino Neves">
+
+  <!-- Como o site aparece quando o link é compartilhado (WhatsApp, Facebook, Instagram) -->
+  <meta property="og:site_name" content="Pousada dos Lagos">
+  <meta property="og:title" content="Pousada dos Lagos | Pousada em Paulino Neves - Lençóis Maranhenses">
+  <meta property="og:description" content="Conforto e aconchego em Paulino Neves (MA). Café da manhã incluso, aceita pets, estacionamento grátis. Diárias a partir de R$ 190.">
+  <meta property="og:image" content="img/fachada.jpg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="768">
+  <meta property="og:image:alt" content="Fachada da Pousada dos Lagos em Paulino Neves - MA">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Quando o site tiver domínio, adicionar aqui:
+       <link rel="canonical" href="https://SEU-DOMINIO/">
+       <meta property="og:url" content="https://SEU-DOMINIO/">
+       e trocar "img/fachada.jpg" por "https://SEU-DOMINIO/img/fachada.jpg" -->
+
+  <link rel="icon" type="image/png" sizes="48x48" href="img/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/icone-192.png">
+  <link rel="apple-touch-icon" href="img/icone-180.png">
+
+  <!-- Carrega primeiro a imagem da capa (deixa o site mais rápido para o Google) -->
+  <link rel="preload" as="image" href="img/capa-fachada.jpg" media="(min-width: 1025px)">
+  <link rel="preload" as="image" href="img/capa-fachada-celular.jpg" media="(max-width: 1024px)">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@400;700&family=Fahkwang:wght@500;600&family=Montserrat:wght@300;400;500&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261102d">
+  <script src="js/anim-init.js?v=20261102d"></script>
+
+  <!-- Dados para o Google entender que é uma hospedagem -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LodgingBusiness", "BedAndBreakfast"],
+    "name": "Pousada dos Lagos",
+    "alternateName": "Pousada dos Lagos Paulino Neves",
+    "description": "Pousada em Paulino Neves (MA), na Rota das Emoções e porta de entrada dos Pequenos Lençóis Maranhenses. Café da manhã regional incluso, aceita pets, acessível e com estacionamento grátis.",
+    "slogan": "O conforto e aconchego que você merece!",
+    "image": ["img/fachada.jpg", "img/quiosque.jpg", "img/salao-cafe.jpg", "img/quarto-triplo.jpg"],
+    "logo": "img/logo-site.jpg",
+    "telephone": "+55 98 98422-4575",
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Pousada%20dos%20Lagos%20Paulino%20Neves%20MA",
+    "currenciesAccepted": "BRL",
+    "knowsLanguage": "pt-BR",
+    "areaServed": ["Paulino Neves", "Lençóis Maranhenses", "Rota das Emoções", "Tutóia", "Barreirinhas"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua São João Batista, 10 - Bairro Cajazeiras",
+      "addressLocality": "Paulino Neves",
+      "addressRegion": "MA",
+      "postalCode": "65585-000",
+      "addressCountry": "BR"
+    },
+    "priceRange": "R$ 190 - R$ 300",
+    "petsAllowed": true,
+    "checkinTime": "14:00",
+    "checkoutTime": "13:00",
+    "amenityFeature": [
+      {"@type": "LocationFeatureSpecification", "name": "Café da manhã", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Estacionamento grátis", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Wi-Fi grátis", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Ar-condicionado", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Acessível para cadeira de rodas", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Aceita pets", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Recepção 24 horas", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Churrasqueira e jardim", "value": true}
+    ],
+    "makesOffer": [
+      {"@type": "Offer", "name": "Quarto Individual", "price": "190", "priceCurrency": "BRL", "description": "1 pessoa, café da manhã incluso (tarifa promocional)"},
+      {"@type": "Offer", "name": "Quarto Duplo", "price": "250", "priceCurrency": "BRL", "description": "Até 2 pessoas, café da manhã incluso"},
+      {"@type": "Offer", "name": "Quarto Triplo", "price": "300", "priceCurrency": "BRL", "description": "Até 3 pessoas, café da manhã incluso"}
+    ],
+    "sameAs": ["https://www.instagram.com/pousada.dos.lagos/"]
+  }
+  </script>
+  <!-- Perguntas frequentes no formato que o Google entende (gerado a partir da seção Dúvidas) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O café da manhã está incluso na diária?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim, o café da manhã está incluso na diária. É servido em buffet, com comidas típicas da região, todos os dias das 7h às 10h."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "A pousada fica próxima a quais pontos turísticos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Estamos em Paulino Neves, na Rota das Emoções, perto dos Pequenos Lençóis, do Rio Novo e da Lagoa do Barreiro Azul. Daqui dá para visitar Caburé, Atins, Tutóia e Barreirinhas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O estacionamento é gratuito?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim, temos estacionamento privativo e gratuito dentro da pousada, sem precisar reservar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quais os horários de check-in e check-out?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Check-in das 14h às 21h e check-out até as 13h."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Há opções de refeições inclusas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Somente o café da manhã. Para almoço e jantar há bares, restaurantes e lanchonetes por perto para ir andando, além de delivery."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "A pousada ajuda com os passeios?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim! Temos balcão de turismo e as cooperativas de passeio buscam e deixam você na pousada."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "A pousada tem piscina?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não temos piscina, mas temos jardim, quiosques de palha, redes e churrasqueira. E os rios e lagoas da região são o melhor banho!"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "A pousada é pet friendly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim, aceitamos pets! Avise na hora da reserva, pois pode haver uma taxa extra."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "A pousada é acessível?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Temos acesso para cadeira de rodas, pia mais baixa e vaso sanitário elevado com barras de apoio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quanto custa a diária na Pousada dos Lagos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As diárias começam em R$ 190 (tarifa promocional do quarto individual). O Quarto Duplo sai a partir de R$ 250 e o Triplo a partir de R$ 300, todos com café da manhã incluso. Os valores podem mudar conforme a data e a temporada."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como chegar em Paulino Neves?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Paulino Neves fica no Maranhão, entre Barreirinhas e Tutóia, na Rota das Emoções. Quem vem de São Luís passa por Barreirinhas; quem vem do Piauí ou do Ceará chega por Parnaíba e Tutóia. Na pousada o estacionamento é grátis."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ===== CABEÇALHO (transparente sobre o vídeo) ===== -->
+  <header class="topo" id="topo">
+    <div class="topo__linha">
+      <a href="#inicio" class="topo__logo" aria-label="Pousada dos Lagos - início">
+        <img src="img/logo-branca.png" width="560" height="330" alt="Pousada dos Lagos">
+      </a>
+
+      <nav class="menu" id="menu" aria-label="Menu principal">
+        <a href="#inicio" class="ativo">Home</a>
+        <a href="#pousada">Pousada</a>
+        <a href="#acomodacoes">Acomodações</a>
+        <a href="#instagram">Fotos</a>
+        <a href="#onde-estamos">Localização</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#contato">Contato</a>
+        <a href="#onde-estamos" class="menu__contorno">Passeios</a>
+        <a data-whats="uma reserva" href="#" class="menu__reservar">Faça uma reserva</a>
+      </nav>
+
+      <button class="menu-botao" id="menuBotao" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+  <!-- ===== CAPA COM A FOTO DA FACHADA ===== -->
+  <section class="capa" id="inicio">
+    <!-- Celular e tablet baixam a versão menor; notebook e PC a versão grande -->
+    <img class="capa__foto" src="img/capa-fachada.jpg"
+      srcset="img/capa-fachada-celular.jpg 1024w, img/capa-fachada.jpg 1920w" sizes="100vw"
+      width="1920" height="1440" fetchpriority="high"
+      alt="Fachada da Pousada dos Lagos em Paulino Neves - MA, com o portão de entrada e a placa da pousada">
+    <div class="capa__escuro"></div>
+    <a data-link="google" href="#" class="capa__nota" aria-label="Ver avaliações da pousada no Google">
+      <svg class="capa__nota-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h11.8c-.5 2.7-2 5-4.4 6.6v5.5h7.1c4.1-3.8 6.5-9.4 6.5-16.1z"/><path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.4l-7.1-5.5c-2 1.3-4.5 2.1-7.4 2.1-5.7 0-10.6-3.9-12.3-9H4.4v5.7C8 41.1 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.7 28.2c-.4-1.3-.7-2.7-.7-4.2s.3-2.9.7-4.2v-5.7H4.4C2.9 17.1 2 20.4 2 24s.9 6.9 2.4 9.9l7.3-5.7z"/><path fill="#EA4335" d="M24 10.8c3.2 0 6.1 1.1 8.4 3.3l6.3-6.3C34.9 4.2 29.9 2 24 2 15.4 2 8 6.9 4.4 14.1l7.3 5.7c1.7-5.1 6.6-9 12.3-9z"/></svg>
+      <span><b>Avaliações no Google</b> ★★★★★<br>veja o que os hóspedes dizem</span>
+    </a>
+  </section>
+
+  <!-- ===== APRESENTAÇÃO ===== -->
+  <section class="intro folhas-fundo" id="pousada">
+    <div class="container intro__grade">
+      <div class="intro__texto">
+        <p data-anim="esquerda" class="sobretitulo">Conforto e aconchego para sua hospedagem</p>
+        <h1 data-anim="surgir">Pousada <span class="destaque">dos Lagos</span> <span class="h1-local">em Paulino Neves · Lençóis Maranhenses</span></h1>
+        <p data-anim="surgir">Escolher a Pousada dos Lagos como hospedagem em Paulino Neves é encontrar um lugar novo, limpinho e decorado com muito carinho, com artesanato da região, redes na varanda e quiosques de palha no jardim. Estamos na Rota das Emoções, entre Barreirinhas e Tutóia, pertinho das dunas, rios e lagoas dos Pequenos Lençóis.</p>
+        <p data-anim="surgir">Os dias começam com um café da manhã com comidas típicas da região e terminam com tranquilidade para descansar. E a nossa equipe, a mais elogiada pelos hóspedes, está sempre pronta para ajudar com dicas e passeios.</p>
+        <div data-anim="direita" class="botoes-reserva">
+          <a data-whats="uma reserva" href="#" class="btn-gradiente">Reservar pelo WhatsApp</a>
+          <a data-link="booking" href="#" class="btn-booking">Reservar no Booking</a>
+        </div>
+        <p data-anim="surgir" class="garantia">O melhor preço reservando direto.</p>
+      </div>
+      <div data-anim="surgir" class="intro__video">
+        <video controls preload="none" playsinline poster="img/capa-apresentacao.jpg">
+          <source src="videos/apresentacao.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div data-anim="surgir" class="titulo-linha">
+      <h2>O que torna sua estadia inesquecível</h2>
+    </div>
+  </section>
+
+  <!-- ===== 4 DESTAQUES COM FOTO ===== -->
+  <section class="destaques">
+    <div class="destaque-foto destaque-foto--cafe"><span>Café da manhã regional</span></div>
+    <div class="destaque-foto destaque-foto--quarto"><span>Quartos climatizados</span></div>
+    <div class="destaque-foto destaque-foto--lazer"><span>Área de lazer e churrasqueira</span></div>
+    <div class="destaque-foto destaque-foto--redes"><span>Redes e varandas</span></div>
+  </section>
+
+  <!-- ===== COMODIDADES ===== -->
+  <section class="azul-claro">
+    <div class="comodidades">
+      <svg class="folha-canto" viewBox="0 0 300 220" aria-hidden="true">
+        <g fill="none" stroke-linecap="round">
+          <path d="M-10 40 C 60 30, 120 60, 170 130" stroke="#6aa86b" stroke-width="3"/>
+          <path d="M40 40 C 50 0, 95 -5, 110 20 C 90 30, 60 40, 40 40Z" fill="#7fbf7a" opacity=".75"/>
+          <path d="M80 60 C 110 25, 160 30, 165 60 C 140 66, 105 66, 80 60Z" fill="#5fa863" opacity=".7"/>
+          <path d="M115 95 C 150 70, 200 85, 195 115 C 170 115, 140 108, 115 95Z" fill="#8fcb85" opacity=".7"/>
+          <path d="M30 50 C 5 80, 20 120, 50 125 C 55 100, 48 72, 30 50Z" fill="#6db46d" opacity=".65"/>
+          <path d="M80 75 C 60 110, 80 150, 110 150 C 112 125, 100 95, 80 75Z" fill="#9ad18f" opacity=".6"/>
+          <path d="M150 20 C 190 40, 230 70, 260 120" stroke="#f2a35a" stroke-width="2"/>
+          <path d="M180 40 C 200 25, 225 30, 228 48" stroke="#f2a35a" stroke-width="2"/>
+          <path d="M205 70 C 230 58, 255 66, 255 86" stroke="#f2a35a" stroke-width="2"/>
+          <path d="M175 48 C 165 70, 175 92, 195 96" stroke="#f2a35a" stroke-width="2"/>
+        </g>
+      </svg>
+      <h3 data-anim="surgir" class="comodidades__titulo">Tudo para <br>seu conforto</h3>
+      <ul class="comodidades__lista">
+        <li data-anim="surgir" data-atraso="1">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="24" cy="32" rx="9" ry="7"/><circle cx="12" cy="20" r="4"/><circle cx="19" cy="12" r="4"/><circle cx="29" cy="12" r="4"/><circle cx="36" cy="20" r="4"/></g></svg>
+          Aceita pets
+        </li>
+        <li data-anim="surgir" data-atraso="2">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="32" height="32" rx="6"/><path d="M19 34V15h7a6 6 0 0 1 0 12h-7"/></g></svg>
+          Estacionamento grátis
+        </li>
+        <li data-anim="surgir" data-atraso="3">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 19a26 26 0 0 1 36 0"/><path d="M12 26a17 17 0 0 1 24 0"/><path d="M18 33a8 8 0 0 1 12 0"/><circle cx="24" cy="39" r="1.5" fill="currentColor"/></g></svg>
+          Wi-Fi gratuito
+        </li>
+        <li data-anim="surgir" data-atraso="4">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 20h24v8a10 10 0 0 1-10 10h-4a10 10 0 0 1-10-10z"/><path d="M34 23h3a4 4 0 0 1 0 8h-4"/><path d="M6 42h32"/><path d="M17 8c-2 3 2 5 0 8M23 8c-2 3 2 5 0 8M29 8c-2 3 2 5 0 8"/></g></svg>
+          Café da manhã incluso
+        </li>
+        <li data-anim="surgir" data-atraso="5">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="22" cy="8" r="3"/><path d="M22 13v12h10l4 10"/><path d="M22 18h9"/><path d="M16 22a10 10 0 1 0 13 13"/></g></svg>
+          Acessibilidade
+        </li>
+      </ul>
+    </div>
+
+    <!-- ===== ACOMODAÇÕES ===== -->
+    <div class="container" id="acomodacoes">
+      <div data-anim="surgir" class="titulo-simples">
+        <h2>O lugar perfeito para relaxar</h2>
+      </div>
+
+      <div class="quartos">
+        <article class="quarto">
+          <img src="img/p/quarto-tv.jpg" width="570" height="760" alt="Quarto individual com TV e banheiro privativo" loading="lazy">
+          <div class="quarto__info">
+            <h3 data-anim="surgir">Quarto Individual</h3>
+            <p class="quarto__pessoas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5z"/></svg>1 pessoa</p>
+            <ul class="quarto__itens">
+              <li>Café da manhã incluso</li>
+              <li>Ar-condicionado e TV</li>
+            </ul>
+            <p class="quarto__preco">a partir de <strong>R$ 190</strong> <small>tarifa promocional</small></p>
+            <a data-anim="direita" class="quarto__botao" data-whats="o Quarto Individual" href="#">Ver detalhes</a>
+            <a class="quarto__booking" data-link="booking" href="#">ou reserve pelo Booking</a>
+          </div>
+        </article>
+
+        <article class="quarto">
+          <img src="img/p/quarto-duplo.jpg" width="590" height="760" alt="Quarto duplo da Pousada dos Lagos em Paulino Neves, com cama de casal" loading="lazy">
+          <div class="quarto__info">
+            <h3 data-anim="surgir">Quarto Duplo</h3>
+            <p class="quarto__pessoas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm7 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM9 13c-3.5 0-7 1.8-7 4.5V19h14v-1.5C16 14.8 12.5 13 9 13zm7 0c-.5 0-1 0-1.5.1 1.5 1 2.5 2.4 2.5 4.4V19h5v-1.5c0-2.7-3-4.5-6-4.5z"/></svg>Até 2 pessoas</p>
+            <ul class="quarto__itens">
+              <li>Cama de casal e cama de solteiro</li>
+              <li>Café da manhã incluso</li>
+            </ul>
+            <p class="quarto__preco">a partir de <strong>R$ 250</strong></p>
+            <a data-anim="direita" class="quarto__botao" data-whats="o Quarto Duplo" href="#">Ver detalhes</a>
+            <a class="quarto__booking" data-link="booking" href="#">ou reserve pelo Booking</a>
+          </div>
+        </article>
+
+        <article class="quarto">
+          <img src="img/p/quarto-triplo.jpg" width="760" height="570" alt="Quarto triplo da Pousada dos Lagos em Paulino Neves, com cama de casal e de solteiro" loading="lazy">
+          <div class="quarto__info">
+            <h3 data-anim="surgir">Quarto Triplo</h3>
+            <p class="quarto__pessoas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm7 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM9 13c-3.5 0-7 1.8-7 4.5V19h14v-1.5C16 14.8 12.5 13 9 13zm7 0c-.5 0-1 0-1.5.1 1.5 1 2.5 2.4 2.5 4.4V19h5v-1.5c0-2.7-3-4.5-6-4.5z"/></svg>Até 3 pessoas</p>
+            <ul class="quarto__itens">
+              <li>Cama de casal e cama de solteiro</li>
+              <li>Café da manhã incluso</li>
+            </ul>
+            <p class="quarto__preco">a partir de <strong>R$ 300</strong></p>
+            <a data-anim="direita" class="quarto__botao" data-whats="o Quarto Triplo" href="#">Ver detalhes</a>
+            <a class="quarto__booking" data-link="booking" href="#">ou reserve pelo Booking</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ONDE ESTAMOS ===== -->
+  <section class="onde" id="onde-estamos">
+    <div class="onde__caixa">
+      <p data-anim="surgir" class="onde__sobretitulo">Onde estamos</p>
+      <h2 data-anim="surgir">Encante-se com <span class="destaque">Paulino Neves</span></h2>
+      <p data-anim="surgir">Paulino Neves faz parte da Rota das Emoções e é a porta de entrada dos Pequenos Lençóis Maranhenses: dunas de areia branca, o Rio Novo, a Lagoa do Barreiro Azul e o vento perfeito para o kitesurf. Daqui dá para chegar até Caburé, Atins, Tutóia e Barreirinhas, e as cooperativas de passeio buscam e deixam você na pousada.</p>
+      <div data-anim="direita" class="botoes-reserva botoes-reserva--centro">
+        <a data-whats="uma reserva" href="#" class="btn-gradiente">Reservar pelo WhatsApp</a>
+        <a data-link="booking" href="#" class="btn-booking">Reservar no Booking</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INSTAGRAM ===== -->
+  <section class="azul-claro instagram" id="instagram">
+    <div class="titulo-lateral">
+      <span data-anim="esquerda" class="titulo-lateral__linha"></span>
+      <h2 data-anim="surgir">Siga-nos no Instagram</h2>
+    </div>
+
+    <div class="container carrossel" data-carrossel>
+      <button class="seta seta--esq" aria-label="Anterior">‹</button>
+      <div class="carrossel__trilho">
+        <button class="carrossel__item"><img src="img/p/salao-cafe.jpg" width="570" height="760" data-full="img/salao-cafe.jpg" alt="Salão do café com luminárias de palha" loading="lazy"></button>
+        <button class="carrossel__item"><img src="img/p/area-convivencia.jpg" width="598" height="760" data-full="img/area-convivencia.jpg" alt="Área de convivência com quiosques de palha" loading="lazy"></button>
+        <button class="carrossel__item"><img src="img/p/quarto-duplo.jpg" width="590" height="760" data-full="img/quarto-duplo.jpg" alt="Quarto com cama de casal" loading="lazy"></button>
+        <button class="carrossel__item"><img src="img/p/varanda-redes.jpg" width="760" height="506" data-full="img/varanda-redes.jpg" alt="Varanda dos quartos com rede" loading="lazy"></button>
+        <button class="carrossel__item"><img src="img/p/salao-dia.jpg" width="570" height="760" data-full="img/salao-dia.jpg" alt="Salão do café durante o dia" loading="lazy"></button>
+        <button class="carrossel__item"><img src="img/p/quiosque.jpg" width="760" height="570" data-full="img/quiosque.jpg" alt="Quiosque com mesas e churrasqueira" loading="lazy"></button>
+        <button class="carrossel__item"><img src="img/p/quarto-triplo.jpg" width="760" height="570" data-full="img/quarto-triplo.jpg" alt="Quarto triplo" loading="lazy"></button>
+        <button class="carrossel__item"><img src="img/p/patio.jpg" width="760" height="578" data-full="img/patio.jpg" alt="Corredor dos quartos e pátio" loading="lazy"></button>
+        <button class="carrossel__item"><img src="img/p/quarto-tv.jpg" width="570" height="760" data-full="img/quarto-tv.jpg" alt="Quarto com TV e banheiro privativo" loading="lazy"></button>
+      </div>
+      <button class="seta seta--dir" aria-label="Próximo">›</button>
+    </div>
+
+    <a class="instagram__arroba" href="https://www.instagram.com/pousada.dos.lagos/" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></g></svg>
+      @pousada.dos.lagos
+    </a>
+
+    <!-- Foto grande que troca sozinha -->
+    <div class="container">
+      <div class="slide-grande" data-slide>
+        <img src="img/patio.jpg" width="1600" height="1216" alt="Pátio, corredor dos quartos e salão do café" class="ativo" loading="lazy">
+        <img src="img/quiosque.jpg" width="1600" height="1200" alt="Quiosque de palha e gramado da Pousada dos Lagos, pousada em Paulino Neves" loading="lazy">
+        <img src="img/varanda-redes.jpg" width="1440" height="960" alt="Varanda dos quartos com rede" loading="lazy">
+        <img src="img/fachada.jpg" width="1024" height="768" alt="Fachada da Pousada dos Lagos em Paulino Neves - MA" loading="lazy" class="foco-baixo">
+        <button class="seta seta--esq" aria-label="Foto anterior">‹</button>
+        <button class="seta seta--dir" aria-label="Próxima foto">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROMOÇÕES ===== -->
+  <section class="promo" aria-labelledby="titulo-promo">
+    <img class="promo__foto" src="img/salao-cafe.jpg" alt="Salão do café da manhã da Pousada dos Lagos com luminárias de palha" loading="lazy" width="1200" height="1600">
+    <div class="promo__conteudo">
+      <h2 data-anim="surgir" id="titulo-promo">Conheça nossas promoções</h2>
+      <p>Diárias a partir de <strong>R$ 190</strong> reservando direto com a gente</p>
+      <a data-anim="direita" class="btn-gradiente" data-whats="as promoções" href="#">Ver promoções</a>
+    </div>
+  </section>
+
+  <!-- ===== DÚVIDAS FREQUENTES ===== -->
+  <section class="duvidas folhas-fundo" id="duvidas">
+    <div class="container estreito">
+      <h2 data-anim="surgir" class="titulo-misto">Dúvidas <span class="destaque">frequentes</span></h2>
+
+      <div class="faq">
+        <details data-anim="surgir">
+          <summary>O café da manhã está incluso na diária?</summary>
+          <p>Sim, o café da manhã está incluso na diária. É servido em buffet, com comidas típicas da região, todos os dias das 7h às 10h.</p>
+        </details>
+        <details data-anim="surgir">
+          <summary>A pousada fica próxima a quais pontos turísticos?</summary>
+          <p>Estamos em Paulino Neves, na Rota das Emoções, perto dos Pequenos Lençóis, do Rio Novo e da Lagoa do Barreiro Azul. Daqui dá para visitar Caburé, Atins, Tutóia e Barreirinhas.</p>
+        </details>
+        <details data-anim="surgir">
+          <summary>O estacionamento é gratuito?</summary>
+          <p>Sim, temos estacionamento privativo e gratuito dentro da pousada, sem precisar reservar.</p>
+        </details>
+        <details data-anim="surgir">
+          <summary>Quais os horários de check-in e check-out?</summary>
+          <p>Check-in das 14h às 21h e check-out até as 13h.</p>
+        </details>
+        <details data-anim="surgir">
+          <summary>Há opções de refeições inclusas?</summary>
+          <p>Somente o café da manhã. Para almoço e jantar há bares, restaurantes e lanchonetes por perto para ir andando, além de delivery.</p>
+        </details>
+        <details data-anim="surgir">
+          <summary>A pousada ajuda com os passeios?</summary>
+          <p>Sim! Temos balcão de turismo e as cooperativas de passeio buscam e deixam você na pousada.</p>
+        </details>
+        <details data-anim="surgir">
+          <summary>A pousada tem piscina?</summary>
+          <p>Não temos piscina, mas temos jardim, quiosques de palha, redes e churrasqueira. E os rios e lagoas da região são o melhor banho!</p>
+        </details>
+        <details data-anim="surgir">
+          <summary>A pousada é pet friendly?</summary>
+          <p>Sim, aceitamos pets! Avise na hora da reserva, pois pode haver uma taxa extra.</p>
+        </details>
+        <details data-anim="surgir">
+          <summary>A pousada é acessível?</summary>
+          <p>Sim. Temos acesso para cadeira de rodas, pia mais baixa e vaso sanitário elevado com barras de apoio.</p>
+        </details>
+        <details data-anim="surgir">
+          <summary>Quanto custa a diária na Pousada dos Lagos?</summary>
+          <p>As diárias começam em R$ 190 (tarifa promocional do quarto individual). O Quarto Duplo sai a partir de R$ 250 e o Triplo a partir de R$ 300, todos com café da manhã incluso. Os valores podem mudar conforme a data e a temporada.</p>
+        </details>
+        <details data-anim="surgir">
+          <summary>Como chegar em Paulino Neves?</summary>
+          <p>Paulino Neves fica no Maranhão, entre Barreirinhas e Tutóia, na Rota das Emoções. Quem vem de São Luís passa por Barreirinhas; quem vem do Piauí ou do Ceará chega por Parnaíba e Tutóia. Na pousada o estacionamento é grátis.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AVALIAÇÕES ===== -->
+  <section class="azul-claro avaliacoes" id="avaliacoes">
+    <div class="container">
+      <h2 data-anim="surgir" class="titulo-misto">O que dizem nossos <span class="destaque">hóspedes</span></h2>
+      <p class="avaliacoes__nota"><strong>9,1</strong> Fantástico · 44 avaliações no Booking</p>
+      <div data-anim="direita" class="botoes-reserva botoes-reserva--centro avaliacoes__fontes">
+        <a data-link="google" href="#" class="btn-booking">Ver avaliações no Google</a>
+        <a data-link="booking" href="#" class="btn-booking">Ver avaliações no Booking</a>
+      </div>
+
+      <div class="depoimentos">
+        <blockquote data-anim="surgir" data-atraso="1">
+          <p>“Atendimento excelente, funcionários muito atenciosos. Ambiente charmoso, simples mas de muito bom gosto.”</p>
+          <cite>Erika</cite>
+        </blockquote>
+        <blockquote data-anim="surgir" data-atraso="2">
+          <p>“Ambiente aconchegante, familiar. O espaço bem organizado, limpo e decoração de muito bom gosto. Os funcionários são muito atenciosos, especialmente a Celeste.”</p>
+          <cite>Mírian</cite>
+        </blockquote>
+        <blockquote data-anim="surgir" data-atraso="3">
+          <p>“A pousada é nova e muito bem decorada. O café da manhã é muito bom e os funcionários muito atenciosos.”</p>
+          <cite>Andrade</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RECEBA OFERTAS ===== -->
+  <section class="ofertas">
+    <div class="estreito">
+      <h2 data-anim="surgir">Receba as melhores<br>ofertas no seu WhatsApp</h2>
+      <form id="formOfertas">
+        <input type="text" id="nomeOferta" placeholder="Primeiro Nome*" required minlength="2" maxlength="40" autocomplete="given-name" pattern="[A-Za-zÀ-ÿ' .-]{2,40}" title="Digite só o seu nome (letras e espaços)">
+        <label class="ofertas__aceite">
+          <input type="checkbox" required>
+          Concordo em receber conteúdos e ofertas da Pousada dos Lagos no meu WhatsApp.
+        </label>
+        <button type="submit">Quero receber</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== MAPA ===== -->
+  <div class="mapa">
+    <iframe
+      title="Mapa da Pousada dos Lagos"
+      src="https://www.google.com/maps?q=Pousada+dos+Lagos,+Rua+S%C3%A3o+Jo%C3%A3o+Batista+10,+Paulino+Neves+-+MA&output=embed"
+      loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+      sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" allowfullscreen></iframe>
+  </div>
+
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="rodape" id="contato">
+    <div class="rodape__caixa">
+      <div class="rodape__topo">
+        <div class="rodape__logo">
+          <img src="img/logo-branca.png" width="560" height="330" alt="Pousada dos Lagos">
+        </div>
+        <div class="rodape__contato">
+          <h4>Contato</h4>
+          <p>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+            R. São João Batista, nº 10, Bairro Cajazeiras, Paulino Neves - MA, 65585-000
+          </p>
+          <p>
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.5L3 29l6.7-1.7c1.9 1 4.1 1.6 6.3 1.6 7.2 0 13-5.8 13-13S23.2 3 16 3zm6 18.7c-.3.8-1.6 1.5-2.3 1.6-.6.1-1.4.2-2.2-.1-.5-.2-1.2-.4-2-.7-3.5-1.5-5.7-5-5.9-5.2-.2-.2-1.4-1.9-1.4-3.6s.9-2.6 1.2-2.9c.3-.3.7-.4.9-.4h.7c.2 0 .5-.1.8.6l1.1 2.6c.1.2.1.4 0 .6-.1.2-.1.4-.3.6l-.5.6c-.1.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.9-1 1.1-1.3.2-.4.5-.3.8-.2.3.1 2 1 2.3 1.1.4.1.6.2.7.4.1.1.1.8-.2 1.6z"/></svg>
+            <a data-whats="" href="#">(98) 98422-4575</a>
+          </p>
+          <a class="rodape__insta" href="https://www.instagram.com/pousada.dos.lagos/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></g></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="rodape__links">
+        <div>
+          <h4>Informações</h4>
+          <a href="#onde-estamos">Nossa Localização</a>
+          <a href="#pousada">Sobre nós</a>
+          <a href="#contato">Contato</a>
+        </div>
+        <div>
+          <h4>Links úteis</h4>
+          <a href="#acomodacoes">Acomodações</a>
+          <a href="#duvidas">Dúvidas frequentes</a>
+          <a data-link="google" href="#">Como chegar</a>
+          <a data-link="booking" href="#">Reservar no Booking</a>
+        </div>
+      </div>
+    </div>
+    <p class="rodape__copy">© <span id="ano"></span> <span class="amarelo">Pousada dos Lagos</span> · Paulino Neves - MA</p>
+  </footer>
+
+  <!-- Botão flutuante do WhatsApp (canto esquerdo, como no modelo) -->
+  <a class="whats-flutuante" data-whats="" href="#" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#fff" d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.5L3 29l6.7-1.7c1.9 1 4.1 1.6 6.3 1.6 7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.7c-2 0-4-.5-5.7-1.6l-.4-.2-4 1 1.1-3.9-.3-.4c-1.2-1.8-1.8-3.9-1.8-6.1C4.9 9.9 9.9 5 16 5s11 4.9 11 11-4.9 10.7-11 10.7zm6-8c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.9 5.2.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.7-.4z"/></svg>
+  </a>
+
+  <!-- Janela para ver foto grande -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__fechar" aria-label="Fechar">×</button>
+    <img alt="">
+  </div>
+
+  <script src="js/script.js?v=20261102d"></script>
+</body>
+</html>
