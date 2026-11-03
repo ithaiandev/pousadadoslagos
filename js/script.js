@@ -195,6 +195,22 @@
     animados.forEach(function (el) { observador.observe(el); });
   }
 
+  // ===== Vídeos pausam sozinhos quando saem da tela =====
+  // Assim o vídeo de apresentação não fica tocando (com som) enquanto o cliente vê o resto da página.
+  const videos = document.querySelectorAll('video');
+  if ('IntersectionObserver' in window) {
+    const vigiaVideo = new IntersectionObserver(function (itens) {
+      itens.forEach(function (item) {
+        if (!item.isIntersecting && !item.target.paused) item.target.pause();
+      });
+    }, { threshold: 0.2 });
+    videos.forEach(function (v) { vigiaVideo.observe(v); });
+  }
+  // Se o cliente trocar de aba ou minimizar, o vídeo também pausa
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) videos.forEach(function (v) { if (!v.paused) v.pause(); });
+  });
+
   // ===== Celular: topo some ao descer e volta ao subir =====
   if (topo) {
     let ultimaPosicao = window.scrollY;
