@@ -10,7 +10,8 @@
   // "Compartilhar" do Google Maps e o endereço da página da pousada no Booking.
   const LINKS = {
     google: 'https://www.google.com/maps/search/?api=1&query=Pousada%20dos%20Lagos%20Paulino%20Neves%20MA',
-    booking: 'https://www.booking.com/searchresults.pt-br.html?ss=Pousada%20dos%20Lagos%2C%20Paulino%20Neves'
+    booking: 'https://www.booking.com/hotel/br/pousada-dos-lagos-paulino-neves.pt-br.html',
+    bookingAvaliacoes: 'https://www.booking.com/hotel/br/pousada-dos-lagos-paulino-neves.pt-br.html#tab-reviews'
   };
 
   // Só estes sites podem ser abertos pelos botões (evita link trocado por engano ou malicioso)

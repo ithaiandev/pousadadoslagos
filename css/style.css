@@ -558,3 +558,11 @@ html, body { overflow-x: clip; }
 @media (min-width: 1025px) {
   .capa__nota { right: auto; left: max(100px, calc((100% - 1140px) / 2)); }
 }
+
+/* Cartões de avaliação clicáveis: levam direto para a avaliação na fonte (Booking) */
+.depo-link { display: block; color: inherit; border-radius: 12px; transition: transform .25s, box-shadow .25s; }
+.depo-link blockquote { height: 100%; }
+.depo-link:hover, .depo-link:focus-visible { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0, 53, 128, .15); }
+.depo-link:focus-visible { outline: 3px solid #003580; outline-offset: 3px; }
+.depo-fonte { display: inline-block; margin-top: 10px; font-size: .8rem; font-weight: 700; color: #003580; }
+.depo-link:hover .depo-fonte { text-decoration: underline; }

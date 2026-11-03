@@ -35,14 +35,14 @@
   <link rel="apple-touch-icon" href="img/icone-180.png">
 
   <!-- Carrega primeiro a imagem da capa (deixa o site mais rápido para o Google) -->
-  <link rel="preload" as="image" href="img/capa-fachada.jpg" media="(min-width: 1025px)">
-  <link rel="preload" as="image" href="img/capa-fachada-celular.jpg" media="(max-width: 1024px)">
+  <link rel="preload" as="image" href="img/capa-fachada-hd.jpg" media="(min-width: 1025px)">
+  <link rel="preload" as="image" href="img/capa-fachada-celular-hd.jpg" media="(max-width: 1024px)">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@400;700&family=Fahkwang:wght@500;600&family=Montserrat:wght@300;400;500&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261102d">
-  <script src="js/anim-init.js?v=20261102d"></script>
+  <link rel="stylesheet" href="css/style.css?v=20261102f">
+  <script src="js/anim-init.js?v=20261102f"></script>
 
   <!-- Dados para o Google entender que é uma hospedagem -->
   <script type="application/ld+json">
@@ -87,7 +87,7 @@
       {"@type": "Offer", "name": "Quarto Duplo", "price": "250", "priceCurrency": "BRL", "description": "Até 2 pessoas, café da manhã incluso"},
       {"@type": "Offer", "name": "Quarto Triplo", "price": "300", "priceCurrency": "BRL", "description": "Até 3 pessoas, café da manhã incluso"}
     ],
-    "sameAs": ["https://www.instagram.com/pousada.dos.lagos/"]
+    "sameAs": ["https://www.instagram.com/pousada.dos.lagos/", "https://www.booking.com/hotel/br/pousada-dos-lagos-paulino-neves.pt-br.html"]
   }
   </script>
   <!-- Perguntas frequentes no formato que o Google entende (gerado a partir da seção Dúvidas) -->
@@ -220,8 +220,8 @@
   <!-- ===== CAPA COM A FOTO DA FACHADA ===== -->
   <section class="capa" id="inicio">
     <!-- Celular e tablet baixam a versão menor; notebook e PC a versão grande -->
-    <img class="capa__foto" src="img/capa-fachada.jpg"
-      srcset="img/capa-fachada-celular.jpg 1024w, img/capa-fachada.jpg 1920w" sizes="100vw"
+    <img class="capa__foto" src="img/capa-fachada-hd.jpg"
+      srcset="img/capa-fachada-celular-hd.jpg 1024w, img/capa-fachada-hd.jpg 1920w" sizes="100vw"
       width="1920" height="1440" fetchpriority="high"
       alt="Fachada da Pousada dos Lagos em Paulino Neves - MA, com o portão de entrada e a placa da pousada">
     <div class="capa__escuro"></div>
@@ -487,22 +487,32 @@
       <p class="avaliacoes__nota"><strong>9,1</strong> Fantástico · 44 avaliações no Booking</p>
       <div data-anim="direita" class="botoes-reserva botoes-reserva--centro avaliacoes__fontes">
         <a data-link="google" href="#" class="btn-booking">Ver avaliações no Google</a>
-        <a data-link="booking" href="#" class="btn-booking">Ver avaliações no Booking</a>
+        <a data-link="bookingAvaliacoes" href="#" class="btn-booking">Ver avaliações no Booking</a>
       </div>
 
       <div class="depoimentos">
-        <blockquote data-anim="surgir" data-atraso="1">
-          <p>“Atendimento excelente, funcionários muito atenciosos. Ambiente charmoso, simples mas de muito bom gosto.”</p>
-          <cite>Erika</cite>
-        </blockquote>
-        <blockquote data-anim="surgir" data-atraso="2">
-          <p>“Ambiente aconchegante, familiar. O espaço bem organizado, limpo e decoração de muito bom gosto. Os funcionários são muito atenciosos, especialmente a Celeste.”</p>
-          <cite>Mírian</cite>
-        </blockquote>
-        <blockquote data-anim="surgir" data-atraso="3">
-          <p>“A pousada é nova e muito bem decorada. O café da manhã é muito bom e os funcionários muito atenciosos.”</p>
-          <cite>Andrade</cite>
-        </blockquote>
+        <!-- Avaliações reais do Booking. Cada cartão abre as avaliações no Booking. -->
+        <a class="depo-link" data-link="bookingAvaliacoes" href="#" data-anim="surgir" data-atraso="1" aria-label="Ver a avaliação de Adele no Booking">
+          <blockquote>
+            <p>“A pousada é aconchegante e organizada com um custo-benefício muito bom. Possui uma área comum bem decorada que possibilita momentos de relaxamento fora do quarto. Os funcionários são simpáticos e atenciosos e sempre dispostos a ajudar.”</p>
+            <cite>Adele</cite>
+            <span class="depo-fonte">Avaliação no Booking · ver ↗</span>
+          </blockquote>
+        </a>
+        <a class="depo-link" data-link="bookingAvaliacoes" href="#" data-anim="surgir" data-atraso="2" aria-label="Ver a avaliação de Lauren no Booking">
+          <blockquote>
+            <p>“A pousada é limpa, os funcionários são muito profissionais, e o atendimento é muito bom. Vi um capricho e cuidado com detalhes que me deixou bem satisfeita. Tem muitas coisas para se fazer na região, vale a pena passar uns dias lá.”</p>
+            <cite>Lauren</cite>
+            <span class="depo-fonte">Avaliação no Booking · ver ↗</span>
+          </blockquote>
+        </a>
+        <a class="depo-link" data-link="bookingAvaliacoes" href="#" data-anim="surgir" data-atraso="3" aria-label="Ver a avaliação de Alcino no Booking">
+          <blockquote>
+            <p>“Atendimento nota dez! Lugar agradável, aconchegante, tranquilidade pra relaxar. Funcionários atenciosos. Inclusive, vamos indicar para amigos essa pousada.”</p>
+            <cite>Alcino</cite>
+            <span class="depo-fonte">Avaliação no Booking · ver ↗</span>
+          </blockquote>
+        </a>
       </div>
     </div>
   </section>
@@ -586,6 +596,6 @@
     <img alt="">
   </div>
 
-  <script src="js/script.js?v=20261102d"></script>
+  <script src="js/script.js?v=20261102f"></script>
 </body>
 </html>
